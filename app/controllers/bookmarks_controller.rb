@@ -4,10 +4,12 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.new
   end
 
+
+  # there is a problem here
+
   def create
     @bookmark = Bookmark.new(bookmark_params)
     @list = List.find(params[:list_id])
-    @movie = Movie.find(params[:movie_id])
 
     @bookmark.list = @list
     @bookmark.movie = @movie
